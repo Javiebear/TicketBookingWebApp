@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="ticketstyle.css" />
+  <title>Ticket</title>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home<span>Home</span></a>
+  <a href="#">Services<span>Services</span></a>
+  <a href="#">FAQ<span>FAQ</span></a>
+</nav>
+<h1 class="heading">Please fill in Information for your ticket.</h1>
+<div class="container" id="container">
+  <!-- Combined form for personal and flight details -->
+  <form id="booking-form" action="/book" method="POST">
+    <div class="form-container pinfo-container">
+      <input type="text" name="fname" placeholder="First Name" required />
+      <input type="text" name="lname" placeholder="Last Name" required />
+    </div>
+    <div class="form-container finfo-container">
+      <h1>Flight Details</h1>
+      <input type="date" name="departureDate" placeholder="Departure Date" required />
+      <label>
+        <input type="checkbox" name="isRoundTrip" /> Round Trip
+      </label>
+      <label>
+        <input type="checkbox" name="isDirect" /> Direct Flight
+      </label>
+      <button type="submit" class="btn">Submit</button>
+    </div>
+  </form>
+</div>
+<script src="ticket.js"></script>
+</body>
+</html>
