@@ -8,7 +8,7 @@ pipeline {
     IMAGE_TAG = "$REPO_PATH/${APP_NAME}"
     SERVICE_ACCOUNT= credentials('94e1cb01-f317-44fe-80c3-db63605a22d6')    // secret file for the GCP credential JSON file. I set it manually in Jenkins credentials
   }
-    agent{   // create a node under the name gcloud that running google/cloud-sdk:latest docker image 
+    agent{   // create a node under the name gcloud that running google/cloud-sdak:latest docker image 
         kubernetes {
       label 'sample-app'
       yaml """
