@@ -4,7 +4,11 @@ import java.util.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-public class Application{public static void main(String[] args) {
+@SpringBootApplication
+public class Application{
+    public static Airport[] airports;
+
+    public static void main(String[] args) {
 
     //creating the airport objects
     Airport airJFK = new Airport("JFK"); //KNICKS
@@ -13,12 +17,12 @@ public class Application{public static void main(String[] args) {
     Airport airLAX = new Airport("LAX"); //LAKERS
 
     //all the airport objects that exist
-    Airport[] airports = { airJFK, airDEN, airYYZ, airLAX };
+    airports = new Airport[]{ airJFK, airDEN, airYYZ, airLAX };
+
 
     //initializing the array of Exising airports
     ArrayList<String> existingAirports = new ArrayList<>();
 
-    
     //iterates through all the airports
     for(int i = 0; i < airports.length; i++){
 
@@ -46,7 +50,30 @@ public class Application{public static void main(String[] args) {
         //reseting the array list
         existingAirports.clear();
     }
+        //for each airport, we must set the flight time to others
+        airJFK.setAirportDistance("YYZ", 115 ); //fight time in minutes
+        airJFK.setAirportDistance("DEN", 280 ); //fight time in minutes
+        airJFK.setAirportDistance("LAX", 385 ); //fight time in minutes
+        airJFK.setAirportDistance("JFK", 0 ); //fight time in minutes
 
+
+        airDEN.setAirportDistance("YYZ", 190 ); //fight time in minutes
+        airDEN.setAirportDistance("JFK", 225 ); //fight time in minutes
+        airDEN.setAirportDistance("LAX", 155 ); //fight time in minutes
+        airDEN.setAirportDistance("DEN", 0 ); //fight time in minutes
+
+
+        airYYZ.setAirportDistance("JFK", 105 ); //fight time in minutes
+        airYYZ.setAirportDistance("DEN", 235 ); //fight time in minutes
+        airYYZ.setAirportDistance("LAX", 325 ); //fight time in minutes
+        airYYZ.setAirportDistance("YYZ", 0 ); //fight time in minutes
+
+
+        airLAX.setAirportDistance("YYZ", 280 ); //fight time in minutes
+        airLAX.setAirportDistance("DEN", 140 ); //fight time in minutes
+        airLAX.setAirportDistance("JFK", 325 ); //fight time in minutes
+        airLAX.setAirportDistance("LAX", 0 ); //fight time in minutes
+    /*
     //all the existing airports
     existingAirports.add("JFK");
     existingAirports.add("DEN");
@@ -73,35 +100,16 @@ public class Application{public static void main(String[] args) {
     System.out.println(airYYZ.getMultiFlights());
     System.out.println(airLAX.getMultiFlights());
 
-    //for each airport, we must set the flight time to others
-    airJFK.setAirportDistance("YYZ", 115 ); //fight time in minutes
-    airJFK.setAirportDistance("DEN", 280 ); //fight time in minutes
-    airJFK.setAirportDistance("LAX", 385 ); //fight time in minutes
-    airJFK.setAirportDistance("JFK", 0 ); //fight time in minutes
-
-
-    airDEN.setAirportDistance("YYZ", 190 ); //fight time in minutes
-    airDEN.setAirportDistance("JFK", 225 ); //fight time in minutes
-    airDEN.setAirportDistance("LAX", 155 ); //fight time in minutes
-    airDEN.setAirportDistance("DEN", 0 ); //fight time in minutes
-
-
-    airYYZ.setAirportDistance("JFK", 105 ); //fight time in minutes
-    airYYZ.setAirportDistance("DEN", 235 ); //fight time in minutes
-    airYYZ.setAirportDistance("LAX", 325 ); //fight time in minutes
-    airYYZ.setAirportDistance("YYZ", 0 ); //fight time in minutes
-
-
-    airLAX.setAirportDistance("YYZ", 280 ); //fight time in minutes
-    airLAX.setAirportDistance("DEN", 140 ); //fight time in minutes
-    airLAX.setAirportDistance("JFK", 325 ); //fight time in minutes
-    airLAX.setAirportDistance("LAX", 0 ); //fight time in minutes
-
+     */
+        //printing out the direct paths
+        System.out.println(airJFK.getDirectFlights());
+        System.out.println(airDEN.getDirectFlights());
+        System.out.println(airYYZ.getDirectFlights());
+        System.out.println(airLAX.getDirectFlights());
 
     SpringApplication.run(Application.class, args);
 
-
-    //USER INPUT AFTER CREATING ALL THE AIRPORT STUFF ------------------------------
+    //USER INPUT AFTER CREATING ALL THE AIRPORT STUFF for testing ------------------------------
     //{ airJFK, airDEN, airYYZ, airLAX }
 
     Scanner input = new Scanner(System.in);
