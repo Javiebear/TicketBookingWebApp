@@ -1,12 +1,12 @@
 pipeline {
  environment {
-    PROJECT = credentials('mindful-silo-415800') // secret text for the project id. I set it manually in Jenkins credentials
-    APP_NAME = "TicketBookingWebApp"
+    PROJECT = credentials('jenkinslab-418900') // secret text for the project id. I set it manually in Jenkins credentials
+    APP_NAME = "binarycalculatorwebapp"
     CLUSTER = credentials("sofe3980u") // secret text for the cluster name. I set it manually in Jenkins credentials
     CLUSTER_ZONE = credentials("northamerica-northeast1-b") // secret text for the cluster zone. I set it manually in Jenkins credentials
-    REPO_PATH= credentials("GitHub_token") // secret text for the repo path. I set it manually in Jenkins credentials
+    REPO_PATH= credentials("jenkin token") // secret text for the repo path. I set it manually in Jenkins credentials
     IMAGE_TAG = "$REPO_PATH/${APP_NAME}"
-    SERVICE_ACCOUNT= credentials('6b6060f3-6500-4210-bcc2-281cf9b2eadb')    // secret file for the GCP credential JSON file. I set it manually in Jenkins credentials
+    SERVICE_ACCOUNT= credentials('94e1cb01-f317-44fe-80c3-db63605a22d6')    // secret file for the GCP credential JSON file. I set it manually in Jenkins credentials
   }
     agent{   // create a node under the name gcloud that running google/cloud-sdk:latest docker image 
         kubernetes {
