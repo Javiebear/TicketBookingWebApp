@@ -12,12 +12,12 @@ pipeline {
     }
     stage ('test') {
       steps {
-        sh 'mvn clean test -f ./BinaryCalculatorWebapp/pom.xml'
+        sh 'mvn clean test -f ./TicketBookingWebApp/pom.xml'
       }
     }
     stage ('build') {
       steps {
-        sh 'mvn package -DskipTests -f ./BinaryCalculatorWebapp/pom.xml'
+        sh 'mvn package -DskipTests -f ./TicketBookingWebApp/pom.xml'
       }
     }
     stage ('Deploy') {
