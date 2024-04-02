@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpSession;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -67,7 +68,7 @@ public class ticketBookController {
 			@RequestParam(value = "isRoundTrip", defaultValue = "false") boolean isRoundTrip,
 			@RequestParam(value = "isMilitary", defaultValue = "false") boolean isMilitary,
 			HttpSession session,
-			Model model) throws{
+			Model model) throws ParseException {
 
 		// Retrieve origin and destination from the session
 		String origins = (String) session.getAttribute("originAirport");
@@ -104,9 +105,10 @@ public class ticketBookController {
 
 		ArrayList<String> airportSelected = new ArrayList<>();
 
+// Attempt to populate the newTicket object correctly
 		airportSelected.add(origin.getAirportName());
 
-		if (dirPathExists) {
+		if (dirPathExists) { // If there are no direct flights
 			airportSelected.add(destination.getAirportName());
 		} else {
 			ArrayList<String> originMulti = origin.returnMultiFlight();
