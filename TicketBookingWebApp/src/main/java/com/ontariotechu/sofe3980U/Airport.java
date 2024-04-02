@@ -4,12 +4,12 @@ import java.util.*;
 
 public class Airport {
     String airportName;
-    private Map<String, Integer> airportDist = new HashMap<String, Integer>();
-    private ArrayList<String> directFlight = new ArrayList<>();
-    private ArrayList<String> multiFlight = new ArrayList<>();
+    public Map<String, Integer> airportDist = new HashMap<String, Integer>();
+    public ArrayList<String> directFlight = new ArrayList<>();
+    public ArrayList<String> multiFlight = new ArrayList<>();
 
     //constructor for Airport class
-    Airport(String airportName){
+    public Airport(String airportName){
         this.airportName = airportName;
     }
 
@@ -64,6 +64,9 @@ public class Airport {
         }
     }
 
+    public String getAirportName() {
+        return this.airportName;
+    }
     //this method will get and return the flight time with the given array
     public int getFlightTime(ArrayList<String> flightPath, Airport[] airports){
         int flightTime = 0;
@@ -115,7 +118,9 @@ public class Airport {
 
         return directFlightsString;
     }
-
+    public List<String> getDirectFlight() {
+        return directFlight;
+    }
     //this method will return all the direct flights within this airport
     public String getMultiFlights(){
         String multiFlightsString = "";
