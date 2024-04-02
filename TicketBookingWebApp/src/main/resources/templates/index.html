@@ -1,114 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-  <link rel="stylesheet" href="style.css">
-
+    <title>Airports and Direct Flights</title>
 </head>
-
 <body>
-
-  <nav id="navBar">
-    <a href="index.html"><img src="image/tickets.png"/></a>
-    <a href="index.html">Home<span>Home</span></a>
-    <a href="#">Services<span>Services</span></a>
-    <a href="#">FAQ<span>FAQ</span></a>
-  </nav>
-
-  <div id="content-box">
-
-    <h1 class="heading">Where Would You Like To Go?</h1>
-
-    <div class="airport-container">
-
-      <div class="box">
-        <img src="image/toronto.jpg" alt="">
-        <h3>Toronto</h3>
-        <p>Ever been in the tallest Building in the world?In love with heights ? The CN tower is the building for you.
-        </p>
-        <a href="yyzorigin.html" class="btn">Book Now</a>
-      </div>
-
-      <div class="box">
-        <img src="image/losangles.jpg" alt="">
-        <h3>Los Angeles</h3>
-        <p>Looking for some relaxation, nice summer breeze and warm beechs, hollywood never disappoints.</p>
-        <a href="laxorigin.html" class="btn">Book Now</a>
-      </div>
-
-      <div class="box">
-        <img src="image/colorado.jpg" alt="">
-        <h3>Colorado</h3>
-        <p>In the mood for some exploration and site seeing? The mountains out here are to die(jump of the top) for.
-        </p>
-        <a href="cldorigin.html" class="btn">Book Now</a>
-      </div>
-
-      <div class="box">
-        <img src="image/newyork.jpg" alt="">
-        <h3>New York</h3>
-        <p>Looking for a good time in the city, New York is definiatly our number 1 choice. </p>
-        <a href="jfkorigin.html" class="btn">Book Now</a>
-      </div>
-
-    </div>
-
-    <div id="flight-box">
-      <h1 class="heading">Weekly Direct Flights</h1>
-
-        <div class="airport-flights">
-          <div class="flight-left">
-            <img class="flight-img" src="image/toronto.jpg" alt="">
-            <h3 class="flight-heading">Toronto (YYZ)</h3>
-          </div>
-
-          <div class="flight-right">
-            <p>YYZ - JFK</p>
-          </div>
-        </div>
-
-        <div class="airport-flights">
-          <div class="flight-left">
-            <img class="flight-img" src="image/losangles.jpg" alt="">
-            <h3 class="flight-heading">Los Angeles (LAX)</h3>
-          </div>
-
-          <div class="flight-right">
-            <p>LAX - JFK</p>
-          </div>
-        </div>
-  
-        <div class="airport-flights">
-          <div class="flight-left">
-            <img class="flight-img" src="image/colorado.jpg" alt="">
-            <h3 class="flight-heading">Colorado (DEN)</h3>
-          </div>
-
-          <div class="flight-right">
-            <p>DEN ➡️ JFK</p>
-          </div>
-        </div>
-
-        <div class="airport-flights">
-          <div class="flight-left">
-            <img class="flight-img" src="image/newyork.jpg" alt="">
-            <h3 class="flight-heading">New York (JFK)</h3>
-          </div>
-
-          <div class="flight-right">
-            <p>JFK - LAX</p>
-          </div>
-        </div>
-
-    </div>
-
-  </div>
-
+<h2>Airports and Direct Flights</h2>
+<div th:each="airport : ${airports}">
+    <h3 th:text="${airport.airportName}">Airport Name</h3>
+    <ul>
+        <li th:each="flight : ${direct}" th:text="${dflight}"></li>
+    </ul>
+</div>
 </body>
-
 </html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="cityPages.css">
+  <link rel="stylesheet" th:href="@{/css/cityPages.css}" />
 
 </head>
 
@@ -93,15 +93,16 @@
 
         <div class="dropdown">
           <h3>Book Now!</h3>
-    
-          <button onclick="myFunction()" class="dropbtn">Select your Origin</button>
-          <div id="myDropdown" class="dropdown-content">
-            <a href="ticket.html">Colorado</a>
-            <a href="ticket.html">Los Angeles</a>
-            <a href="ticket.html">New York</a>
-          </div>
-    
-          <script src="ticket.js"></script>
+
+          <form action="/setOrigin" method="post">
+            <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+            <select name="originAirport">
+              <option value="DEN">Colorado</option>
+              <option value="LAX">Los Angeles</option>
+              <option value="YYZ">Toronto</option>
+            </select>
+            <input type="submit">
+          </form>
     
         </div>
 
