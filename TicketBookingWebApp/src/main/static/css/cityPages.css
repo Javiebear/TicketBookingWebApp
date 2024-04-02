@@ -1,0 +1,279 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+body {
+  /*background: linear-gradient(45deg, blueviolet, lightgreen);*/
+  background-color: white;
+}
+
+/* CSS for the navigation bar */
+
+#navBar{
+  box-shadow: 0 1.5rem 3rem -0.1rem hsla(0, 0%, 0%, 0.25);
+  background-color: white;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+nav a {
+
+  position: relative;
+  font-size: 1.1em;
+  background:  blueviolet;
+  -webkit-background-clip: text; 
+  text-decoration: none;
+  color: blueviolet;
+  padding: 6px 20px;
+  transition: .5s; 
+  opacity: 1; /* 100% opacity should be represented as 1 */
+}
+
+nav a img{
+  max-height: 1.1em;
+}
+
+nav a:hover {
+  color: #cca0e4;
+}
+
+nav a span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-bottom: 4px solid #ee00ff;
+  border-radius: 25px;
+  transform: scale(0) translateY(50px);
+  opacity: 0;
+  transition: .5s;
+}
+
+nav a:hover span {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* CSS for main components*/
+
+#infoBox{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  align-items: center;
+  color: #2F3D47;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+
+}
+
+#content{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 5vh;
+  padding-right: 2vh;
+  padding-left: 2vh; 
+  padding-bottom: 10vh;
+}
+
+/* CONTENT ON LEFT SIDE */
+#content-left{
+  flex: 0 0 57.5%;
+}
+
+.title{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 0.5vh;
+}
+
+.heading {
+  text-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+  font-size: 50px;
+  font-weight: normal;
+}
+
+#text{
+  font-size: 10px;
+  font-weight: normal;
+  padding-bottom: 2vh;
+}
+
+#popular{
+  font-weight: normal;
+  font-size: 15px;
+  width: 100%;
+}
+
+#popular-split{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+#popular-left{
+  flex: 0 0 45%;
+
+}
+
+#popular-right{
+  flex: 0 0 50%;
+
+}
+
+.img-text-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.img-text-line img {
+  max-height: 15px;
+  padding-right: 1vw;
+}
+
+.items{
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+/* CONTENT ON RIGHT SIDE */
+#content-right{
+  flex: 0 0 37.5%;
+
+}
+
+
+
+/* CSS for the images */
+
+.slider-wrapper {
+  position: relative;
+  max-width: 80vw;
+  margin: 0 auto;
+  float: right
+}
+
+.slider {
+  display: flex;
+  aspect-ratio: 16 / 9;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+  border-radius: 0.5rem;
+}
+
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.slider img {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+
+.slider-nav {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.slider-nav a {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.75;
+  transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+  opacity: 1;
+}
+
+/*button*/
+
+.dropbtn {
+  background-color: #04f196;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #b6b828;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2vh;
+}
+
+.dropdown h3{
+  padding-bottom: 0.5vh;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" th:href="@{/css/cityPages.css}" />
+
+</head>
+
+<body>
+
+  <nav id="navBar">
+    <a href="index.html"><img src="image/tickets.png"/></a>
+    <a href="index.html">Home<span>Home</span></a>
+    <a href="#">Services<span>Services</span></a>
+    <a href="#">FAQ<span>FAQ</span></a>
+  </nav>
+
+  <div id="infoBox">
+
+    <div id="image">
+      <div class="slider-wrapper">
+        <div class="slider">
+          <img id="slide-1" src="image/lax.jpg">
+          <img id="slide-2" src="image/lax2.jpg">
+          <img id="slide-3" src="image/lax3.jpg">
+          <img id="slide-4" src="image/lax4.jpg">
+
+          <div class="slider-nav">
+            <a href="#slide-1"></a>
+            <a href="#slide-2"></a>
+            <a href="#slide-3"></a>
+            <a href="#slide-4"></a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div id="content-left">
+        <div class="title">
+          <h2 class="heading">Los Angeles</h2>
+          <h2 class="heading">City in California</h2>
+        </div>
+
+        <div id="text">
+          <h3>
+            The eager tourist will find Los Angeles, a city known for its glitter, excitement, and limitless possibilities,
+            welcoming them with open arms.
+          </h3>
+        </div>
+
+        <div id="popular">
+          <h2 class="title">Popular Locations</h2>
+
+          <div id="popular-split">
+
+            <div id="popular-left">
+              <div class="img-text-line">
+                <img src="image/location.png" alt="location image"/>
+                <p class="items">Hollywood Boulevard</p>
+              </div>
+
+              <div class="img-text-line">
+                <img src="image/location.png" alt="location image"/>
+                <p class="items">Griffith Observatory</p>
+              </div>
+              
+            </div>
+  
+            <div id="popular-left">
+
+              <div class="img-text-line">
+                <img src="image/location.png" alt="location image"/>
+                <p class="items">Disney Land</p>
+              </div>
+
+              <div class="img-text-line">
+                <img src="image/location.png" alt="location image"/>
+                <p class="items">Santa Monica Pier</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="content-right">
+
+        <div class="dropdown">
+          <h3>Book Now!</h3>
+
+          <form action="/setOrigin" method="post">
+            <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+            <select name="originAirport">
+              <option value="DEN">Colorado</option>
+              <option value="LAX">Los Angeles</option>
+              <option value="YYZ">Toronto</option>
+            </select>
+            <input type="submit">
+          </form>
+    
+        </div>
+
+        <div id="country-infor">
+          <div class="img-text-line">
+            <img src="image/countries.png" alt="Country"/>
+            <p class="items">United States of America</p>
+          </div>
+
+          <div class="img-text-line">
+            <img src="image/dollar.png" alt="currency"/>
+            <p class="items">$USD</p>
+          </div>
+
+          <div class="img-text-line">
+            <img src="image/clock.png" alt="timezone"/>
+            <p class="items">PDT</p>
+          </div>
+
+          <div class="img-text-line">
+            <img src="image/plane.png" alt="airport"/>
+            <p class="items">Los Angeles International Airport (LAX)</p>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+</body>
