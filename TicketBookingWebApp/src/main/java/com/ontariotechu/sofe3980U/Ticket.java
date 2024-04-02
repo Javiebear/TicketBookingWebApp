@@ -16,6 +16,7 @@ public class Ticket {
     private String flightTime;
     private String time;
 
+
     // This method has 2 paramaters: Origin, Destination
     // bookTrip will book a trip from the users selected origin
     // to the users selected destination and allow the use to proceed
@@ -111,7 +112,32 @@ public class Ticket {
         this.flightTime = hours + "Hour(s) " + mins + "Minutes";
     }
 
+    public String getTime() {
+        return this.time;
+    }
+    public String getFname() {
+        return this.fname;
+    }
+    public String getLname() {
+        return this.lname;
+    }
+    public Airport getOrigin() {
+        return this.origin;
+    }
+    public Airport getDestination() {
+        return this.destination;
+    }
+    public String getDepartureDate() {
+        return this.departureDate;
+    }
+    public boolean isRoundTrip() {
+        return this.isRoundTrip;
+    }
     public String getFlightTime(){
         return this.flightTime;
     }
+    public ArrayList<String> getAirportPath() {
+        return airportPath;
+    }
+
 }
